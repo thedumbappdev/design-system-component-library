@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search as SearchIcon } from "lucide-react";
+import { Search as SearchIcon, Command } from "lucide-react";
 import { navigation, type NavItem } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
@@ -68,14 +68,14 @@ export function SearchCommand({ onClose }: { onClose: () => void }) {
 	};
 
 	return (
-		<div className="fixed inset-0 z-999 flex items-start justify-center pt-[15vh]">
+		<div className="fixed inset-0 z-[999] flex items-start justify-center pt-[12vh]">
 			<div
-				className="fixed inset-0 bg-black/25 backdrop-blur-sm"
+				className="fixed inset-0 bg-black/40 backdrop-blur-sm"
 				onClick={onClose}
 			/>
-			<div className="relative w-full max-w-lg">
-				<div className="rounded-xl border border-border bg-background shadow-2xl overflow-hidden">
-					<div className="flex items-center gap-3 border-b border-border px-4">
+			<div className="relative w-full max-w-lg animate-in fade-in zoom-in-95 duration-200">
+				<div className="rounded-2xl border border-border/50 bg-background/95 backdrop-blur-xl shadow-2xl shadow-black/5 dark:shadow-black/40 overflow-hidden">
+					<div className="flex items-center gap-3 border-b border-border/50 px-5">
 						<SearchIcon className="size-4 shrink-0 text-muted-foreground" />
 						<input
 							ref={inputRef}
@@ -86,15 +86,15 @@ export function SearchCommand({ onClose }: { onClose: () => void }) {
 							}}
 							onKeyDown={handleKeyDown}
 							placeholder="Search pages..."
-							className="flex h-12 w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+							className="flex h-13 w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
 						/>
-						<kbd className="hidden sm:inline-flex rounded border bg-muted px-1.5 text-[10px] text-muted-foreground">
-							ESC
+						<kbd className="hidden sm:inline-flex items-center gap-1 rounded-lg border border-border/50 bg-muted/50 px-2 py-1 text-[10px] font-medium text-muted-foreground">
+							<Command className="size-3" /> ESC
 						</kbd>
 					</div>
 					<div className="max-h-80 overflow-y-auto p-2">
 						{filtered.length === 0 && (
-							<p className="p-4 text-center text-sm text-muted-foreground">
+							<p className="p-6 text-center text-sm text-muted-foreground">
 								No results found.
 							</p>
 						)}
@@ -104,9 +104,9 @@ export function SearchCommand({ onClose }: { onClose: () => void }) {
 								onClick={() => navigate(page.href)}
 								onMouseEnter={() => setSelectedIndex(i)}
 								className={cn(
-									"flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-left transition-colors",
+									"flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm text-left transition-all duration-200",
 									i === selectedIndex
-										? "bg-primary/10 text-primary"
+										? "bg-primary/10 text-primary font-medium"
 										: "text-muted-foreground hover:text-foreground hover:bg-muted",
 								)}
 							>
@@ -114,7 +114,7 @@ export function SearchCommand({ onClose }: { onClose: () => void }) {
 									{page.title}
 								</span>
 								{page.status && (
-									<span className="ml-auto rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-medium uppercase text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
+									<span className="ml-auto rounded-md bg-emerald-100 px-2 py-0.5 text-[10px] font-medium uppercase text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
 										{page.status}
 									</span>
 								)}

@@ -98,18 +98,18 @@ export function MyComponent() {
 
       <h2 id="related" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Related Components</h2>
       <div className="flex flex-wrap gap-3 my-4">
-        <Link href="/components/dropdown" className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          Dropdown <ArrowRight className="size-3.5" />
+        <Link href="/components/dropdown" className="group inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-primary/20 transition-all duration-300">
+          Dropdown <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
         </Link>
-        <Link href="/components/modal" className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          Modal <ArrowRight className="size-3.5" />
+        <Link href="/components/modal" className="group inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-primary/20 transition-all duration-300">
+          Modal <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
         </Link>
       </div>
 
-      <div className="mt-16 flex items-center justify-between border-t border-border pt-6">
+      <div className="mt-16 flex items-center justify-between gap-4">
         <div />
-        <Link href="/components/badge" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          Badge <ArrowRight className="size-4" />
+        <Link href="/components/badge" className="group flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+          Badge <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
         </Link>
       </div>
     </DocShell>

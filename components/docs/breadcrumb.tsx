@@ -19,8 +19,8 @@ export function Breadcrumb() {
   if (segments.length === 0) return null;
 
   return (
-    <nav className="flex items-center gap-1.5 text-sm text-muted-foreground mb-4">
-      <Link href="/" className="hover:text-foreground transition-colors">
+    <nav className="flex items-center gap-1.5 text-sm text-muted-foreground mb-6">
+      <Link href="/" className="hover:text-foreground transition-colors duration-200">
         Home
       </Link>
       {segments.map((segment, i) => {
@@ -29,11 +29,11 @@ export function Breadcrumb() {
         const isLast = i === segments.length - 1;
         return (
           <span key={href} className="flex items-center gap-1.5">
-            <ChevronRight className="size-3.5" />
+            <ChevronRight className="size-3.5 text-muted-foreground/50" />
             {isLast ? (
               <span className="text-foreground font-medium">{label}</span>
             ) : (
-              <Link href={href} className="hover:text-foreground transition-colors">
+              <Link href={href} className="hover:text-foreground transition-colors duration-200">
                 {label}
               </Link>
             )}

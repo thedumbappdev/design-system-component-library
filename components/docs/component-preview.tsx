@@ -12,8 +12,8 @@ export function ComponentPreview({
   return (
     <div
       className={cn(
-        "my-6 flex min-h-[200px] w-full items-center justify-center rounded-lg border border-border bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] p-10",
-        "[background-size:16px_16px]",
+        "my-8 flex min-h-[240px] w-full items-center justify-center rounded-xl border border-border bg-[radial-gradient(#e7e5e4_1px,transparent_1px)] dark:bg-[radial-gradient(#27272a_1px,transparent_1px)] p-10",
+        "[background-size:20px_20px] shadow-sm",
         className,
       )}
     >

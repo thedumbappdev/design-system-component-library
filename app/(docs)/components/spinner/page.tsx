@@ -41,7 +41,7 @@ export default function SpinnerPage() {
           </div>
           <button
             disabled
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground opacity-70"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-medium text-primary-foreground opacity-70"
           >
             <Spinner size="sm" className="text-primary-foreground" />
             Saving...
@@ -71,12 +71,12 @@ function Spinner({ className }: { className?: string }) {
   Loading...
 </button>`} />
 
-      <div className="mt-16 flex items-center justify-between border-t border-border pt-6">
-        <Link href="/components/toast" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          <ArrowLeft className="size-4" /> Toast
+      <div className="mt-16 flex items-center justify-between gap-4">
+        <Link href="/components/toast" className="group flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+          <ArrowLeft className="size-4 transition-transform duration-300 group-hover:-translate-x-0.5" /> Toast
         </Link>
-        <Link href="/components/alert" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          Alert <ArrowRight className="size-4" />
+        <Link href="/components/alert" className="group flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+          Alert <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
         </Link>
       </div>
     </DocShell>

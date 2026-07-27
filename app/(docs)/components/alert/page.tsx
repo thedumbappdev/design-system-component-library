@@ -29,7 +29,7 @@ function Alert({ variant = "default", title, children }: { variant?: "default" |
   };
   const Icon = icons[variant];
   return (
-    <div className={`flex gap-3 rounded-lg border p-4 ${styles[variant]}`}>
+    <div className={`flex gap-3 rounded-xl border p-4 ${styles[variant]}`}>
       <Icon className="size-5 shrink-0 mt-0.5" />
       <div>
         <p className="font-medium text-sm">{title}</p>
@@ -69,7 +69,7 @@ export default function AlertPage() {
       <h2 id="usage" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Usage</h2>
       <CodeBlock language="tsx" code={`import { AlertCircle, Info } from "lucide-react";
 
-<div className="flex gap-3 rounded-lg border border-red-200 bg-red-50 p-4">
+<div className="flex gap-3 rounded-xl border border-red-200 bg-red-50 p-4">
   <AlertCircle className="size-5 shrink-0 mt-0.5" />
   <div>
     <p className="font-medium text-sm">Error</p>
@@ -77,12 +77,12 @@ export default function AlertPage() {
   </div>
 </div>`} />
 
-      <div className="mt-16 flex items-center justify-between border-t border-border pt-6">
-        <Link href="/components/spinner" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          <ArrowLeft className="size-4" /> Spinner
+      <div className="mt-16 flex items-center justify-between gap-4">
+        <Link href="/components/spinner" className="group flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+          <ArrowLeft className="size-4 transition-transform duration-300 group-hover:-translate-x-0.5" /> Spinner
         </Link>
-        <Link href="/components/empty-state" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          Empty State <ArrowRight className="size-4" />
+        <Link href="/components/empty-state" className="group flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm text-muted-foreground hover:text-foreground hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+          Empty State <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5" />
         </Link>
       </div>
     </DocShell>

@@ -16,25 +16,25 @@ export default function TypographyPage() {
       <p className="text-muted-foreground mb-8">The design system uses Geist for UI and body text, and Geist Mono for code. Both fonts are self-hosted via next/font for zero external requests.</p>
 
       <h2 id="type-scale" className="text-xl font-semibold mb-4">Type Scale</h2>
-      <div className="overflow-x-auto rounded-lg border border-border mb-10">
+      <div className="overflow-x-auto rounded-xl border border-border shadow-sm mb-10">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/50">
-              <th className="px-4 py-3 text-left font-medium">Level</th>
-              <th className="px-4 py-3 text-left font-medium">Size</th>
-              <th className="px-4 py-3 text-left font-medium">Weight</th>
-              <th className="px-4 py-3 text-left font-medium">Example</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">Level</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">Size</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">Weight</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">Example</th>
             </tr>
           </thead>
           <tbody>
             {typeScale.map((t) => (
-              <tr key={t.name} className="border-b border-border last:border-0">
-                <td className="px-4 py-3 font-medium">{t.name}</td>
-                <td className="px-4 py-3 text-muted-foreground">{t.size}</td>
-                <td className="px-4 py-3 text-muted-foreground">{t.weight}</td>
-                <td className="px-4 py-3">
+              <tr key={t.name} className="border-b border-border last:border-0 transition-colors hover:bg-muted/30">
+                <td className="px-5 py-3.5 font-medium">{t.name}</td>
+                <td className="px-5 py-3.5 text-muted-foreground">{t.size}</td>
+                <td className="px-5 py-3.5 text-muted-foreground">{t.weight}</td>
+                <td className="px-5 py-3.5">
                   {t.name === "Code" ? (
-                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-sm">{t.example}</code>
+                    <code className="rounded-md bg-muted px-2 py-0.5 font-mono text-sm">{t.example}</code>
                   ) : (
                     <span style={{ fontFamily: t.name === "Code" ? "var(--font-geist-mono)" : undefined }}>
                       {t.example}
@@ -49,7 +49,7 @@ export default function TypographyPage() {
 
       <h2 id="font-families" className="text-xl font-semibold mb-4">Font Families</h2>
       <div className="grid gap-6 sm:grid-cols-2 mb-10">
-        <div className="rounded-lg border border-border p-6">
+        <div className="rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/20">
           <h3 className="text-sm font-semibold text-foreground mb-2">Geist Sans</h3>
           <p className="text-sm text-muted-foreground">Used for headings, body text, and UI elements.</p>
           <div className="mt-4 space-y-2">
@@ -58,7 +58,7 @@ export default function TypographyPage() {
             <p className="text-base font-normal">Regular (400)</p>
           </div>
         </div>
-        <div className="rounded-lg border border-border p-6">
+        <div className="rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/20">
           <h3 className="text-sm font-semibold text-foreground mb-2">Geist Mono</h3>
           <p className="text-sm text-muted-foreground">Used for code blocks, props tables, and inline code.</p>
           <div className="mt-4 space-y-2 font-mono">

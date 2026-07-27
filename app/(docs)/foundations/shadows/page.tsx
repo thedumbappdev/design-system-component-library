@@ -17,31 +17,31 @@ export default function ShadowsPage() {
       <h2 id="scale" className="text-xl font-semibold mb-4">Shadow Scale</h2>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
         {shadowScale.map((s) => (
-          <div key={s.name} className="rounded-lg border border-border p-6" style={{ boxShadow: s.style }}>
-            <div className="text-sm font-medium mb-1">{s.name}</div>
+          <div key={s.name} className="rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]" style={{ boxShadow: s.style }}>
+            <div className="text-sm font-semibold mb-1">{s.name}</div>
             <div className="font-mono text-xs text-muted-foreground mb-2">{s.token}</div>
-            <div className="text-xs text-muted-foreground font-mono break-all">{s.style}</div>
+            <div className="text-xs text-muted-foreground font-mono break-all leading-relaxed">{s.style}</div>
           </div>
         ))}
       </div>
 
       <h2 id="guidelines" className="text-xl font-semibold mb-4">Usage Guidelines</h2>
       <div className="grid gap-6 sm:grid-cols-2">
-        <div className="rounded-lg border border-border p-4">
+        <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Cards</h3>
-          <p className="text-sm text-muted-foreground">shadow-sm for default card elevation. Shadow-md for hovered cards.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">shadow-sm for default card elevation. Shadow-md for hovered cards.</p>
         </div>
-        <div className="rounded-lg border border-border p-4">
+        <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Modals & Dialogs</h3>
-          <p className="text-sm text-muted-foreground">shadow-xl for modal dialogs. Shadow-2xl for full-screen overlays.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">shadow-xl for modal dialogs. Shadow-2xl for full-screen overlays.</p>
         </div>
-        <div className="rounded-lg border border-border p-4">
+        <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Dropdowns</h3>
-          <p className="text-sm text-muted-foreground">shadow-lg for dropdown menus and popovers.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">shadow-lg for dropdown menus and popovers.</p>
         </div>
-        <div className="rounded-lg border border-border p-4">
+        <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Dark Mode</h3>
-          <p className="text-sm text-muted-foreground">Shadows are reduced in dark mode to avoid harsh contrast. Use border to define surface boundaries instead.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">Shadows are reduced in dark mode to avoid harsh contrast. Use border to define surface boundaries instead.</p>
         </div>
       </div>
     </DocShell>

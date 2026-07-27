@@ -18,43 +18,43 @@ export default function AccessibilityPage() {
       </p>
 
       <h2 id="keyboard" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Keyboard Navigation</h2>
-      <div className="overflow-x-auto rounded-lg border border-border mb-6">
+      <div className="overflow-x-auto rounded-xl border border-border shadow-sm mb-6">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/50">
-              <th className="px-4 py-3 text-left font-medium">Component</th>
-              <th className="px-4 py-3 text-left font-medium">Interaction</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">Component</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">Interaction</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-border"><td className="px-4 py-3">Button</td><td className="px-4 py-3 text-muted-foreground">Enter / Space</td></tr>
-            <tr className="border-b border-border"><td className="px-4 py-3">Checkbox</td><td className="px-4 py-3 text-muted-foreground">Tab to focus, Space to toggle</td></tr>
-            <tr className="border-b border-border"><td className="px-4 py-3">Radio Group</td><td className="px-4 py-3 text-muted-foreground">Arrow keys to navigate, Space to select</td></tr>
-            <tr className="border-b border-border"><td className="px-4 py-3">Select</td><td className="px-4 py-3 text-muted-foreground">Arrow keys, Enter to select, Escape to close</td></tr>
-            <tr className="border-b border-border"><td className="px-4 py-3">Dropdown Menu</td><td className="px-4 py-3 text-muted-foreground">Arrow keys, Enter to activate, Escape to close</td></tr>
-            <tr className="border-b border-border"><td className="px-4 py-3">Modal</td><td className="px-4 py-3 text-muted-foreground">Tab trap, Escape to close, focus returns on close</td></tr>
-            <tr className="border-b border-border"><td className="px-4 py-3">Input / Textarea</td><td className="px-4 py-3 text-muted-foreground">Native keyboard input, Tab to navigate</td></tr>
-            <tr className="border-0"><td className="px-4 py-3">Toast</td><td className="px-4 py-3 text-muted-foreground">Auto-dismiss, Escape to dismiss, action buttons focusable</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5 font-medium">Button</td><td className="px-5 py-3.5 text-muted-foreground">Enter / Space</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5 font-medium">Checkbox</td><td className="px-5 py-3.5 text-muted-foreground">Tab to focus, Space to toggle</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5 font-medium">Radio Group</td><td className="px-5 py-3.5 text-muted-foreground">Arrow keys to navigate, Space to select</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5 font-medium">Select</td><td className="px-5 py-3.5 text-muted-foreground">Arrow keys, Enter to select, Escape to close</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5 font-medium">Dropdown Menu</td><td className="px-5 py-3.5 text-muted-foreground">Arrow keys, Enter to activate, Escape to close</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5 font-medium">Modal</td><td className="px-5 py-3.5 text-muted-foreground">Tab trap, Escape to close, focus returns on close</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5 font-medium">Input / Textarea</td><td className="px-5 py-3.5 text-muted-foreground">Native keyboard input, Tab to navigate</td></tr>
+            <tr className="border-0 transition-colors hover:bg-muted/30"><td className="px-5 py-3.5 font-medium">Toast</td><td className="px-5 py-3.5 text-muted-foreground">Auto-dismiss, Escape to dismiss, action buttons focusable</td></tr>
           </tbody>
         </table>
       </div>
 
       <h2 id="color-contrast" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Color Contrast</h2>
-      <div className="overflow-x-auto rounded-lg border border-border mb-6">
+      <div className="overflow-x-auto rounded-xl border border-border shadow-sm mb-6">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/50">
-              <th className="px-4 py-3 text-left font-medium">Token Pair</th>
-              <th className="px-4 py-3 text-left font-medium">Ratio</th>
-              <th className="px-4 py-3 text-left font-medium">AA</th>
-              <th className="px-4 py-3 text-left font-medium">AAA</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">Token Pair</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">Ratio</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">AA</th>
+              <th className="px-5 py-3.5 text-left font-semibold text-xs uppercase tracking-wider">AAA</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-border"><td className="px-4 py-3">--foreground on --background</td><td className="px-4 py-3">15.3:1</td><td className="px-4 py-3 text-emerald-600">✓</td><td className="px-4 py-3 text-emerald-600">✓</td></tr>
-            <tr className="border-b border-border"><td className="px-4 py-3">--primary on --background</td><td className="px-4 py-3">6.8:1</td><td className="px-4 py-3 text-emerald-600">✓</td><td className="px-4 py-3">✗</td></tr>
-            <tr className="border-b border-border"><td className="px-4 py-3">--primary on --primary-foreground</td><td className="px-4 py-3">5.9:1</td><td className="px-4 py-3 text-emerald-600">✓</td><td className="px-4 py-3">✗</td></tr>
-            <tr className="border-0"><td className="px-4 py-3">--muted-foreground on --background</td><td className="px-4 py-3">7.2:1</td><td className="px-4 py-3 text-emerald-600">✓</td><td className="px-4 py-3">✓</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5">--foreground on --background</td><td className="px-5 py-3.5 text-muted-foreground">15.3:1</td><td className="px-5 py-3.5 text-emerald-600 font-medium">✓</td><td className="px-5 py-3.5 text-emerald-600 font-medium">✓</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5">--primary on --background</td><td className="px-5 py-3.5 text-muted-foreground">6.8:1</td><td className="px-5 py-3.5 text-emerald-600 font-medium">✓</td><td className="px-5 py-3.5 text-muted-foreground">✗</td></tr>
+            <tr className="border-b border-border transition-colors hover:bg-muted/30"><td className="px-5 py-3.5">--primary on --primary-foreground</td><td className="px-5 py-3.5 text-muted-foreground">5.9:1</td><td className="px-5 py-3.5 text-emerald-600 font-medium">✓</td><td className="px-5 py-3.5 text-muted-foreground">✗</td></tr>
+            <tr className="border-0 transition-colors hover:bg-muted/30"><td className="px-5 py-3.5">--muted-foreground on --background</td><td className="px-5 py-3.5 text-muted-foreground">7.2:1</td><td className="px-5 py-3.5 text-emerald-600 font-medium">✓</td><td className="px-5 py-3.5 text-emerald-600 font-medium">✓</td></tr>
           </tbody>
         </table>
       </div>

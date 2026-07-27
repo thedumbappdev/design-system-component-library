@@ -9,20 +9,28 @@ export function ThemeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
   const mounted = useMounted();
 
-  if (!mounted) return <div className={cn("size-5", className)} />;
+  if (!mounted) return <div className={cn("size-9", className)} />;
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className={cn(
-        "inline-flex items-center justify-center rounded-md p-2",
-        "text-muted-foreground hover:text-foreground hover:bg-muted",
-        "transition-colors duration-150",
+        "inline-flex items-center justify-center rounded-full size-9",
+        "border border-border bg-background/80 backdrop-blur-sm",
+        "text-muted-foreground hover:text-foreground hover:border-primary/30",
+        "transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]",
+        "active:scale-[0.9]",
         className,
       )}
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
+      <span className="transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]">
+        {theme === "dark" ? (
+          <Sun className="size-4" />
+        ) : (
+          <Moon className="size-4" />
+        )}
+      </span>
     </button>
   );
 }

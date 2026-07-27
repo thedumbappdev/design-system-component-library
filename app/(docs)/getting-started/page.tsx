@@ -22,21 +22,21 @@ export default function GettingStartedPage() {
 
       <h2 id="principles" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Principles</h2>
       <div className="grid gap-6 sm:grid-cols-2 mb-6">
-        <div className="rounded-lg border border-border p-4">
+        <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="font-semibold text-sm mb-1">Accessible by default</h3>
-          <p className="text-sm text-muted-foreground">All components meet WCAG AA standards. Keyboard navigation, screen reader support, and sufficient color contrast are built-in.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">All components meet WCAG AA standards. Keyboard navigation, screen reader support, and sufficient color contrast are built-in.</p>
         </div>
-        <div className="rounded-lg border border-border p-4">
+        <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="font-semibold text-sm mb-1">Composable</h3>
-          <p className="text-sm text-muted-foreground">Components are designed to be combined. Use them as building blocks — not rigid templates.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">Components are designed to be combined. Use them as building blocks — not rigid templates.</p>
         </div>
-        <div className="rounded-lg border border-border p-4">
+        <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="font-semibold text-sm mb-1">Themeable</h3>
-          <p className="text-sm text-muted-foreground">CSS custom properties power the entire design language. Change the tokens, change the look.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">CSS custom properties power the entire design language. Change the tokens, change the look.</p>
         </div>
-        <div className="rounded-lg border border-border p-4">
+        <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="font-semibold text-sm mb-1">Progressive</h3>
-          <p className="text-sm text-muted-foreground">Start with the basics. Add complexity as needed. No mandatory wrappers or boilerplate.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">Start with the basics. Add complexity as needed. No mandatory wrappers or boilerplate.</p>
         </div>
       </div>
 
