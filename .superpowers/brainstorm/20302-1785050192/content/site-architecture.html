@@ -1,0 +1,63 @@
+<h2>Site Architecture & Routing</h2>
+<p class="subtitle">Next.js App Router structure matching the MVP site map from the prompt.</p>
+
+<div class="section">
+<h3 style="margin-bottom:4px">Route Structure</h3>
+<div style="font-family:monospace;font-size:13px;line-height:1.8;background:#f6f6f6;padding:12px 16px;border-radius:8px;">
+  /                    → Landing page<br>
+  /getting-started     → Introduction, Principles, Installation, FAQ<br>
+  /foundations         → Colors, Typography, Spacing, Radius, Shadows, Icons, Grid<br>
+  /components          → Buttons, Cards, Inputs, Dropdowns, Modals, Toasts, Alerts, Checkboxes, Radios<br>
+  /patterns            → Common UI patterns<br>
+  /accessibility       → A11y guidelines<br>
+  /resources           → Links, tools, references<br>
+  /changelog           → Version history
+</div>
+</div>
+
+<div class="section">
+<h3 style="margin-bottom:4px">Layout Hierarchy</h3>
+<div style="display:flex; gap:12px;">
+  <div style="flex:1; background:#f6f6f6; padding:12px; border-radius:8px;">
+    <strong>Root layout</strong><br>
+    <span style="font-size:12px;color:#666;">HTML shell, fonts, theme provider, global styles</span>
+  </div>
+  <div style="flex:1; background:#f6f6f6; padding:12px; border-radius:8px;">
+    <strong>Docs layout</strong><br>
+    <span style="font-size:12px;color:#666;">Sidebar nav + top bar + content area + right TOC</span>
+  </div>
+</div>
+</div>
+
+<div class="section">
+<h3 style="margin-bottom:4px">Desktop Layout</h3>
+<div style="background:#f6f6f6; border-radius:8px; overflow:hidden;">
+  <div style="background:#1e3a5f; color:white; padding:8px 16px; font-size:12px; display:flex; justify-content:space-between;">
+    <span>Logo</span><span>Search · Theme toggle · GitHub</span>
+  </div>
+  <div style="display:flex; min-height:120px;">
+    <div style="width:30%; background:#f0f0f0; padding:12px; border-right:1px solid #ddd; font-size:11px;">
+      <strong>Sidebar</strong><br>
+      Getting Started<br>
+      Foundations<br>
+      └ Colors<br>
+      └ Typography<br>
+      Components<br>
+      └ Buttons<br>
+      └ Cards<br>
+      ...
+    </div>
+    <div style="flex:1; padding:12px; font-size:11px;">
+      <strong>Content area</strong>
+    </div>
+    <div style="width:20%; background:#f0f0f0; padding:12px; border-left:1px solid #ddd; font-size:11px;">
+      <strong>On this page</strong>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="section">
+<h3>Does this architecture look right?</h3>
+<p style="font-size:14px;color:#555">Next section I'll detail the component page template (variant playground, props table, etc.).</p>
+</div>

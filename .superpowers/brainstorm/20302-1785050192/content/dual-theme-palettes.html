@@ -1,0 +1,118 @@
+<h2>Premium Palettes — Light + Dark Mode</h2>
+<p class="subtitle" style="margin-bottom:0">Light is default. Dark is toggleable. Pick your favorite.</p>
+<p class="subtitle" style="margin-top:0">The single accent color stays consistent across both modes.</p>
+
+<style>
+  .swatch-row { display:flex; gap:6px; margin:6px 0; }
+  .swatch { width:28px; height:28px; border-radius:6px; border:1px solid rgba(0,0,0,0.06); }
+  .sub-row { display:flex; gap:12px; flex-wrap:wrap; margin:4px 0; }
+  .sub-label { font-size:11px; color:#666; }
+  .card .tag { background:#e2e8f0; color:#1e293b; padding:2px 10px; border-radius:4px; display:inline-block; font-size:12px; margin:6px 0; }
+  .mode-group {display:flex; gap:16px; margin-top:8px;}
+  .mode-col {flex:1;}
+  .mode-col h4 {font-size:13px; margin:0 0 4px; padding:0;}
+  .palette-grid {display:flex; flex-direction:column; gap:2px; margin:6px 0; font-size:11px; color:#555;}
+  .palette-row {display:flex; align-items:center; gap:8px;}
+  .palette-label {min-width:70px;}
+</style>
+
+<div class="cards">
+  <!-- Satoshi + Emerald -->
+  <div class="card" data-choice="satoshi-emerald" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Satoshi + Emerald</h3>
+      <p style="font-size:13px; margin:0 0 8px">
+        <strong>Display:</strong> Satoshi · <strong>Mono:</strong> JetBrains Mono
+      </p>
+      <div class="mode-group">
+        <div class="mode-col">
+          <h4>☀ Light</h4>
+          <div class="swatch-row">
+            <div class="swatch" style="background:#18181b" title="Text"></div>
+            <div class="swatch" style="background:#fafafa" title="Background"></div>
+            <div class="swatch" style="background:#059669" title="Accent"></div>
+            <div class="swatch" style="background:#f4f4f5" title="Surface"></div>
+            <div class="swatch" style="background:#e4e4e7" title="Border"></div>
+          </div>
+        </div>
+        <div class="mode-col">
+          <h4>☾ Dark</h4>
+          <div class="swatch-row">
+            <div class="swatch" style="background:#fafafa" title="Text"></div>
+            <div class="swatch" style="background:#09090b" title="Background"></div>
+            <div class="swatch" style="background:#34d399" title="Accent"></div>
+            <div class="swatch" style="background:#18181b" title="Surface"></div>
+            <div class="swatch" style="background:#27272a" title="Border"></div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:#666;margin:4px 0 0">Accent: emerald-600 / emerald-400 · Neutrals: zinc</p>
+    </div>
+  </div>
+
+  <!-- Geist + Cobalt -->
+  <div class="card" data-choice="geist-cobalt" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Geist + Cobalt</h3>
+      <p style="font-size:13px; margin:0 0 8px">
+        <strong>Display:</strong> Geist · <strong>Mono:</strong> Geist Mono
+      </p>
+      <div class="mode-group">
+        <div class="mode-col">
+          <h4>☀ Light</h4>
+          <div class="swatch-row">
+            <div class="swatch" style="background:#0f172a" title="Text"></div>
+            <div class="swatch" style="background:#ffffff" title="Background"></div>
+            <div class="swatch" style="background:#2563eb" title="Accent"></div>
+            <div class="swatch" style="background:#f8fafc" title="Surface"></div>
+            <div class="swatch" style="background:#e2e8f0" title="Border"></div>
+          </div>
+        </div>
+        <div class="mode-col">
+          <h4>☾ Dark</h4>
+          <div class="swatch-row">
+            <div class="swatch" style="background:#f8fafc" title="Text"></div>
+            <div class="swatch" style="background:#020617" title="Background"></div>
+            <div class="swatch" style="background:#3b82f6" title="Accent"></div>
+            <div class="swatch" style="background:#0f172a" title="Surface"></div>
+            <div class="swatch" style="background:#1e293b" title="Border"></div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:#666;margin:4px 0 0">Accent: blue-600 / blue-500 · Neutrals: slate</p>
+    </div>
+  </div>
+
+  <!-- Cabinet + Deep Rose -->
+  <div class="card" data-choice="cabinet-rose" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Cabinet Grotesk + Deep Rose</h3>
+      <p style="font-size:13px; margin:0 0 8px">
+        <strong>Display:</strong> Cabinet Grotesk · <strong>Mono:</strong> JetBrains Mono
+      </p>
+      <div class="mode-group">
+        <div class="mode-col">
+          <h4>☀ Light</h4>
+          <div class="swatch-row">
+            <div class="swatch" style="background:#09090b" title="Text"></div>
+            <div class="swatch" style="background:#fafafa" title="Background"></div>
+            <div class="swatch" style="background:#be185d" title="Accent"></div>
+            <div class="swatch" style="background:#f4f4f5" title="Surface"></div>
+            <div class="swatch" style="background:#e4e4e7" title="Border"></div>
+          </div>
+        </div>
+        <div class="mode-col">
+          <h4>☾ Dark</h4>
+          <div class="swatch-row">
+            <div class="swatch" style="background:#fafafa" title="Text"></div>
+            <div class="swatch" style="background:#09090b" title="Background"></div>
+            <div class="swatch" style="background:#f43f5e" title="Accent"></div>
+            <div class="swatch" style="background:#18181b" title="Surface"></div>
+            <div class="swatch" style="background:#27272a" title="Border"></div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:#666;margin:4px 0 0">Accent: rose-700 / rose-500 · Neutrals: zinc</p>
+    </div>
+  </div>
+</div>

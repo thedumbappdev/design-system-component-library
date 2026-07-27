@@ -1,0 +1,69 @@
+<h2>Fresh Directions — Completely Different Vibes</h2>
+<p class="subtitle">Each option has a distinct feel. Imagine the full site in this personality.</p>
+
+<style>
+  .swatch-row { display:flex; gap:4px; margin:4px 0; flex-wrap:wrap; }
+  .swatch { width:20px; height:20px; border-radius:4px; border:1px solid rgba(0,0,0,0.06); }
+  .card { cursor:pointer; }
+  .mode-group {display:flex; gap:8px; margin:6px 0;}
+  .mode-col {flex:1; background:#f9f9f9; border-radius:6px; padding:8px; border:1px solid #eee;}
+  .mode-col.darkk {background:#111; border-color:#333;}
+  .mode-col.darkk .swatch {border-color:rgba(255,255,255,0.1);}
+  .mode-col h5 {font-size:11px; margin:0 0 4px; padding:0; text-transform:uppercase; letter-spacing:0.5px; color:#999;}
+  .mode-col.darkk h5 {color:#666;}
+  .font-chip {font-size:10px; background:#f0f0f0; padding:1px 8px; border-radius:4px; display:inline-block;}
+  .vibe-label {font-size:11px; color:#888; margin:2px 0;}
+  .desc {font-size:12px; margin:4px 0; color:#444;}
+</style>
+
+<div class="cards" style="grid-template-columns:1fr 1fr">
+
+  <div class="card" data-choice="deep-forest" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>🌲 Deep Forest</h3>
+      <p class="desc">Premium earthy. Dark green ink, warm paper, gold accent. Rich and grounded.</p>
+      <div class="font-row"><span class="font-chip">Satoshi</span><span class="font-chip">JetBrains Mono</span></div>
+      <div class="mode-group">
+        <div class="mode-col"><h5>☀ Light</h5><div class="swatch-row"><div class="swatch" style="background:#1a2e05"></div><div class="swatch" style="background:#faf7f0"></div><div class="swatch" style="background:#a16207"></div><div class="swatch" style="background:#fff"></div><div class="swatch" style="background:#e3ddd0"></div></div></div>
+        <div class="mode-col darkk"><h5>☾ Dark</h5><div class="swatch-row"><div class="swatch" style="background:#faf7f0"></div><div class="swatch" style="background:#0a0f04"></div><div class="swatch" style="background:#eab308"></div><div class="swatch" style="background:#1a2e05"></div><div class="swatch" style="background:#2c4714"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="slate-rose" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>🥀 Slate + Wine</h3>
+      <p class="desc">Editorial sophistication. Cool slate canvas, deep wine accent. Refined, artsy, memorable.</p>
+      <div class="font-row"><span class="font-chip">Geist</span><span class="font-chip">Geist Mono</span></div>
+      <div class="mode-group">
+        <div class="mode-col"><h5>☀ Light</h5><div class="swatch-row"><div class="swatch" style="background:#0f172a"></div><div class="swatch" style="background:#f8fafc"></div><div class="swatch" style="background:#9d174d"></div><div class="swatch" style="background:#fff"></div><div class="swatch" style="background:#e2e8f0"></div></div></div>
+        <div class="mode-col darkk"><h5>☾ Dark</h5><div class="swatch-row"><div class="swatch" style="background:#f8fafc"></div><div class="swatch" style="background:#020617"></div><div class="swatch" style="background:#db2777"></div><div class="swatch" style="background:#0f172a"></div><div class="swatch" style="background:#1e293b"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="ink-cream" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>🖋 Ink + Cream</h3>
+      <p class="desc">High contrast editorial. Near-black ink, cream paper, warm steel accent. Typographic power.</p>
+      <div class="font-row"><span class="font-chip">Cabinet Grotesk</span><span class="font-chip">Geist Mono</span></div>
+      <div class="mode-group">
+        <div class="mode-col"><h5>☀ Light</h5><div class="swatch-row"><div class="swatch" style="background:#0a0a0b"></div><div class="swatch" style="background:#f7f5f0"></div><div class="swatch" style="background:#57534e"></div><div class="swatch" style="background:#fff"></div><div class="swatch" style="background:#e3ddd0"></div></div></div>
+        <div class="mode-col darkk"><h5>☾ Dark</h5><div class="swatch-row"><div class="swatch" style="background:#f7f5f0"></div><div class="swatch" style="background:#0a0a0b"></div><div class="swatch" style="background:#a8a29e"></div><div class="swatch" style="background:#1a1a1b"></div><div class="swatch" style="background:#292524"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="ocean-bronze" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>🌊 Ocean + Bronze</h3>
+      <p class="desc">Cool meets warm. Teal-navy base with bronze/copper accent. Unexpected, luxurious.</p>
+      <div class="font-row"><span class="font-chip">Satoshi</span><span class="font-chip">JetBrains Mono</span></div>
+      <div class="mode-group">
+        <div class="mode-col"><h5>☀ Light</h5><div class="swatch-row"><div class="swatch" style="background:#0f172a"></div><div class="swatch" style="background:#f0fdfa"></div><div class="swatch" style="background:#8b5cf6?"></div><div class="swatch" style="background:#fff"></div><div class="swatch" style="background:#ccfbf1"></div></div></div>
+        <div class="mode-col darkk"><h5>☾ Dark</h5><div class="swatch-row"><div class="swatch" style="background:#f0fdfa"></div><div class="swatch" style="background:#042f2e"></div><div class="swatch" style="background:#f59e0b"></div><div class="swatch" style="background:#0f172a"></div><div class="swatch" style="background:#134e4a"></div></div></div>
+      </div>
+    </div>
+  </div>
+
+</div>

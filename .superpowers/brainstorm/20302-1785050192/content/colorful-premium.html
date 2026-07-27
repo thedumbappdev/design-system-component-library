@@ -1,0 +1,132 @@
+<h2>Colorful & Premium</h2>
+<p class="subtitle">Bold use of color while keeping it sophisticated. Each uses 1-2 colors deliberately across the UI.</p>
+
+<style>
+  .palette-row { display:flex; gap:6px; margin:6px 0; flex-wrap:wrap; }
+  .swatch { width:28px; height:28px; border-radius:6px; border:1px solid rgba(0,0,0,0.06); }
+  .card { cursor:pointer; }
+  .mode-h {font-size:11px; margin:0 0 4px; padding:0; text-transform:uppercase; letter-spacing:0.5px; color:#999;}
+  .font-chip {font-size:10px; background:#f0f0f0; padding:1px 8px; border-radius:4px; display:inline-block;}
+  .desc {font-size:12px; margin:4px 0; color:#555;}
+  .color-blocks {display:flex; gap:0; margin:8px 0; border-radius:6px; overflow:hidden;}
+  .color-block {height:40px; flex:1;}
+  .swatch-label {font-size:9px; color:#888; display:block; margin-top:2px;}
+</style>
+
+<div class="cards">
+
+  <!-- Cobalt + Coral -->
+  <div class="card" data-choice="cobalt-coral" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Cobalt + Coral</h3>
+      <p class="desc">Bold blue-vibrancy with warm coral pop. Premium sport-luxury energy.</p>
+      <div class="font-row"><span class="font-chip">Satoshi</span><span class="font-chip">JetBrains Mono</span></div>
+      <div class="color-blocks">
+        <div class="color-block" style="background:#f5f5f4"></div>
+        <div class="color-block" style="background:#1d4ed8"></div>
+        <div class="color-block" style="background:#e11d48"></div>
+        <div class="color-block" style="background:#1e1b4b"></div>
+        <div class="color-block" style="background:#ffffff"></div>
+      </div>
+      <div style="display:flex;gap:8px;font-size:10px;color:#666;">
+        <span>BG #f5f5f4</span><span>Accent #1d4ed8</span><span>Pop #e11d48</span><span>Ink #1e1b4b</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Emerald + Copper -->
+  <div class="card" data-choice="emerald-copper" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Emerald + Copper</h3>
+      <p class="desc">Jewel-tone green with warm metallic copper. Rich, natural, premium.</p>
+      <div class="font-row"><span class="font-chip">Cabinet Grotesk</span><span class="font-chip">Geist Mono</span></div>
+      <div class="color-blocks">
+        <div class="color-block" style="background:#fafaf9"></div>
+        <div class="color-block" style="background:#047857"></div>
+        <div class="color-block" style="background:#d97706"></div>
+        <div class="color-block" style="background:#022c22"></div>
+        <div class="color-block" style="background:#ffffff"></div>
+      </div>
+      <div style="display:flex;gap:8px;font-size:10px;color:#666;">
+        <span>BG #fafaf9</span><span>Accent #047857</span><span>Pop #d97706</span><span>Ink #022c22</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Violet + Chartreuse (unexpected high-fashion) -->
+  <div class="card" data-choice="violet-lime" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Violet + Chartreuse</h3>
+      <p class="desc">Unexpected, avant-garde. Deep violet base with electric lime-green pop. Boldest option.</p>
+      <div class="font-row"><span class="font-chip">Cabinet Grotesk</span><span class="font-chip">JetBrains Mono</span></div>
+      <div class="color-blocks">
+        <div class="color-block" style="background:#f5f3ff"></div>
+        <div class="color-block" style="background:#6d28d9"></div>
+        <div class="color-block" style="background:#4d7c0f"></div>
+        <div class="color-block" style="background:#2e1065"></div>
+        <div class="color-block" style="background:#ffffff"></div>
+      </div>
+      <div style="display:flex;gap:8px;font-size:10px;color:#666;">
+        <span>BG #f5f3ff</span><span>Accent #6d28d9</span><span>Pop #4d7c0f</span><span>Ink #2e1065</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Crimson + Navy -->
+  <div class="card" data-choice="crimson-navy" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Crimson + Navy</h3>
+      <p class="desc">Powerful and confident. Deep navy canvas, crimson accent. Premium editorial feel.</p>
+      <div class="font-row"><span class="font-chip">Geist</span><span class="font-chip">Geist Mono</span></div>
+      <div class="color-blocks">
+        <div class="color-block" style="background:#f8fafc"></div>
+        <div class="color-block" style="background:#dc2626"></div>
+        <div class="color-block" style="background:#1e3a5f"></div>
+        <div class="color-block" style="background:#0f172a"></div>
+        <div class="color-block" style="background:#ffffff"></div>
+      </div>
+      <div style="display:flex;gap:8px;font-size:10px;color:#666;">
+        <span>BG #f8fafc</span><span>Accent #dc2626</span><span>Alt #1e3a5f</span><span>Ink #0f172a</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Saffron + Charcoal -->
+  <div class="card" data-choice="saffron-charcoal" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Saffron + Charcoal</h3>
+      <p class="desc">Warm golden-yellow against deep charcoal. Optimistic, premium, distinctive.</p>
+      <div class="font-row"><span class="font-chip">Satoshi</span><span class="font-chip">Geist Mono</span></div>
+      <div class="color-blocks">
+        <div class="color-block" style="background:#fefce8"></div>
+        <div class="color-block" style="background:#b45309"></div>
+        <div class="color-block" style="background:#eab308"></div>
+        <div class="color-block" style="background:#171717"></div>
+        <div class="color-block" style="background:#ffffff"></div>
+      </div>
+      <div style="display:flex;gap:8px;font-size:10px;color:#666;">
+        <span>BG #fefce8</span><span>Accent #b45309</span><span>Pop #eab308</span><span>Ink #171717</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fuchsia + Teal -->
+  <div class="card" data-choice="fuchsia-teal" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Fuchsia + Teal</h3>
+      <p class="desc">Vibrant cool-warm contrast. Bold, modern, unexpected for a dev tool.</p>
+      <div class="font-row"><span class="font-chip">Cabinet Grotesk</span><span class="font-chip">JetBrains Mono</span></div>
+      <div class="color-blocks">
+        <div class="color-block" style="background:#fdf4ff"></div>
+        <div class="color-block" style="background:#be185d"></div>
+        <div class="color-block" style="background:#0d9488"></div>
+        <div class="color-block" style="background:#09090b"></div>
+        <div class="color-block" style="background:#ffffff"></div>
+      </div>
+      <div style="display:flex;gap:8px;font-size:10px;color:#666;">
+        <span>BG #fdf4ff</span><span>Accent #be185d</span><span>Alt #0d9488</span><span>Ink #09090b</span>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+<h2>Framework / Build Tool</h2>
+<p class="subtitle">The prompt specifies Tailwind CSS + Flowbite. Which framework should power the documentation site?</p>
+
+<div class="cards">
+  <div class="card" data-choice="nextjs" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Next.js (Static Export)</h3>
+      <p>App Router, MDX for docs pages, file-based routing, built-in image optimization, ISR capability for future dynamic content. Heavier but most scalable.</p>
+      <div class="pros-cons" style="margin-top:8px"><div class="pros"><h6>Pros</h6><ul><li>Rich ecosystem + docs</li><li>Easy MDX integration</li><li>Future-proof</li></ul></div><div class="cons"><h6>Cons</h6><ul><li>Heavy for a docs site</li><li>Slower dev startup</li></ul></div></div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="vite" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Vite + React</h3>
+      <p>Lightweight, fast HMR, React Router for navigation, MDX plugin. Less overhead than Next.js for a pure static site.</p>
+      <div class="pros-cons" style="margin-top:8px"><div class="pros"><h6>Pros</h6><ul><li>Fastest dev experience</li><li>Minimal boilerplate</li><li>Smaller bundle</li></ul></div><div class="cons"><h6>Cons</h6><ul><li>Manual routing config</li><li>No built-in image opt</li></ul></div></div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="astro" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>Astro</h3>
+      <p>Content-collections for docs, zero JS by default, island architecture for interactive component previews. Best for content-heavy sites.</p>
+      <div class="pros-cons" style="margin-top:8px"><div class="pros"><h6>Pros</h6><ul><li>Fasteset static output</li><li>Built for content sites</li><li>Minimal JS shipped</li></ul></div><div class="cons"><h6>Cons</h6><ul><li>React interop possible</li><li>Smaller ecosystem</li></ul></div></div>
+    </div>
+  </div>
+</div>
