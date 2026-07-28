@@ -136,7 +136,7 @@ export function Hero() {
 		<section
 			ref={sectionRef}
 			onMouseMove={handleMouseMove}
-			className="relative overflow-hidden border-b border-border min-h-[90dvh] flex items-top"
+			className="relative overflow-hidden border-b border-border min-h-[90dvh] flex justify-start items-start"
 		>
 			{/* Spotlight overlay following cursor */}
 			<div
@@ -158,7 +158,7 @@ export function Hero() {
 				}}
 			/>
 
-			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-accent/[0.03]" />
+			<div className="absolute top-0 inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-accent/[0.03]" />
 			<motion.div
 				className="absolute top-1/3 -right-16 size-[600px] rounded-full bg-primary/8 blur-[140px]"
 				animate={{ scale: [1, 1.05, 1], opacity: [0.4, 0.6, 0.4] }}
