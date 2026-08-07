@@ -60,7 +60,7 @@ export default function SpacingPage() {
         </div>
         <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Negative space</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">Generous whitespace improves scannability. Avoid compressing content — let sections breathe with adequate spacing.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">Generous whitespace improves scannability. Avoid compressing content - let sections breathe with adequate spacing.</p>
         </div>
       </div>
     </DocShell>

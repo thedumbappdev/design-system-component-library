@@ -1,4 +1,4 @@
-# Design System Showcase — Implementation Plan
+# Design System Showcase - Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -15,12 +15,12 @@
 ```
 design-system-component-library/
 ├── app/
-│   ├── layout.tsx                    # Root layout — providers, fonts, globals
+│   ├── layout.tsx                    # Root layout - providers, fonts, globals
 │   ├── page.tsx                      # Landing page
 │   ├── globals.css                   # CSS variables, Tailwind layers, theme tokens
 │   ├── not-found.tsx                 # 404 page
 │   ├── (docs)/
-│   │   ├── layout.tsx                # Docs shell — sidebar + top nav + content + TOC
+│   │   ├── layout.tsx                # Docs shell - sidebar + top nav + content + TOC
 │   │   ├── page.tsx                  # Docs index (redirect to /getting-started or overview)
 │   │   ├── getting-started/
 │   │   │   └── page.tsx              # Getting started page
@@ -95,6 +95,7 @@ design-system-component-library/
 ### Task 1: Project Scaffolding
 
 **Files:**
+
 - Create: `package.json`
 - Create: `tsconfig.json`
 - Create: `next.config.ts`
@@ -334,7 +335,11 @@ export function ThemeToggle({ className }: { className?: string }) {
       )}
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
+      {theme === "dark" ? (
+        <Sun className="size-5" />
+      ) : (
+        <Moon className="size-5" />
+      )}
     </button>
   );
 }
@@ -350,15 +355,28 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Component Library — Design System",
-  description: "A scalable component library built with Tailwind CSS + shadcn/ui for modern applications.",
+  title: "Component Library - Design System",
+  description:
+    "A scalable component library built with Tailwind CSS + shadcn/ui for modern applications.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+    >
       <body className="min-h-[100dvh] antialiased">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
           {children}
         </ThemeProvider>
       </body>
@@ -370,7 +388,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 - [ ] **Step 10: Run first build check**
 
 ```bash
-npx next build 2>&1 || echo "Build will fail until all pages exist — this is expected"
+npx next build 2>&1 || echo "Build will fail until all pages exist - this is expected"
 ```
 
 - [ ] **Step 11: Commit scaffold**
@@ -387,6 +405,7 @@ git commit -m "feat: scaffold Next.js project with Crimson + Navy theme"
 ### Task 2: Navigation System + Docs Layout
 
 **Files:**
+
 - Create: `lib/navigation.ts`
 - Create: `components/docs/sidebar.tsx`
 - Create: `components/docs/top-nav.tsx`
@@ -437,7 +456,11 @@ export const navigation: NavItem[] = [
       { title: "Toast", href: "/components/toast", status: "stable" },
       { title: "Spinner", href: "/components/spinner", status: "stable" },
       { title: "Alert", href: "/components/alert", status: "stable" },
-      { title: "Empty State", href: "/components/empty-state", status: "stable" },
+      {
+        title: "Empty State",
+        href: "/components/empty-state",
+        status: "stable",
+      },
     ],
   },
   {
@@ -463,11 +486,20 @@ import { navigation, type NavItem as NavItemType } from "@/lib/navigation";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-function NavGroup({ item, pathname, depth = 0 }: { item: NavItemType; pathname: string; depth?: number }) {
+function NavGroup({
+  item,
+  pathname,
+  depth = 0,
+}: {
+  item: NavItemType;
+  pathname: string;
+  depth?: number;
+}) {
   const [expanded, setExpanded] = useState(true);
   const hasChildren = item.children && item.children.length > 0;
   const isActive = item.href === pathname;
-  const isChildActive = hasChildren && item.children!.some((c) => c.href === pathname);
+  const isChildActive =
+    hasChildren && item.children!.some((c) => c.href === pathname);
 
   if (!hasChildren) {
     return (
@@ -498,13 +530,21 @@ function NavGroup({ item, pathname, depth = 0 }: { item: NavItemType; pathname: 
       >
         {item.title}
         <ChevronDown
-          className={cn("size-4 transition-transform", expanded && "rotate-180")}
+          className={cn(
+            "size-4 transition-transform",
+            expanded && "rotate-180",
+          )}
         />
       </button>
       {expanded && (
         <div className="ml-3 mt-1 space-y-1 border-l border-border pl-3">
           {item.children!.map((child) => (
-            <NavGroup key={child.href || child.title} item={child} pathname={pathname} depth={depth + 1} />
+            <NavGroup
+              key={child.href || child.title}
+              item={child}
+              pathname={pathname}
+              depth={depth + 1}
+            />
           ))}
         </div>
       )}
@@ -514,13 +554,19 @@ function NavGroup({ item, pathname, depth = 0 }: { item: NavItemType; pathname: 
 
 function StatusBadge({ status }: { status: string }) {
   const colors: Record<string, string> = {
-    stable: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
+    stable:
+      "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
     beta: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
     deprecated: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
     new: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
   };
   return (
-    <span className={cn("ml-auto rounded px-1.5 py-0.5 text-[10px] font-medium uppercase", colors[status])}>
+    <span
+      className={cn(
+        "ml-auto rounded px-1.5 py-0.5 text-[10px] font-medium uppercase",
+        colors[status],
+      )}
+    >
       {status}
     </span>
   );
@@ -551,7 +597,10 @@ export function TopNav() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container-main flex h-14 items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-2 font-semibold text-lg">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-semibold text-lg"
+          >
             <span className="text-primary font-bold">✦</span>
             <span>Design System</span>
           </Link>
@@ -596,11 +645,13 @@ export function TableOfContents() {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll("h2, h3")).map((el) => ({
-      id: el.id,
-      text: el.textContent || "",
-      level: Number(el.tagName[1]),
-    }));
+    const elements = Array.from(document.querySelectorAll("h2, h3")).map(
+      (el) => ({
+        id: el.id,
+        text: el.textContent || "",
+        level: Number(el.tagName[1]),
+      }),
+    );
     setHeadings(elements);
   }, []);
 
@@ -681,7 +732,9 @@ export function Breadcrumb() {
       </Link>
       {segments.map((segment, i) => {
         const href = "/" + segments.slice(0, i + 1).join("/");
-        const label = labelMap[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
+        const label =
+          labelMap[segment] ||
+          segment.charAt(0).toUpperCase() + segment.slice(1);
         const isLast = i === segments.length - 1;
         return (
           <span key={href} className="flex items-center gap-1.5">
@@ -689,7 +742,10 @@ export function Breadcrumb() {
             {isLast ? (
               <span className="text-foreground font-medium">{label}</span>
             ) : (
-              <Link href={href} className="hover:text-foreground transition-colors">
+              <Link
+                href={href}
+                className="hover:text-foreground transition-colors"
+              >
                 {label}
               </Link>
             )}
@@ -708,7 +764,11 @@ import { Sidebar } from "@/components/docs/sidebar";
 import { TopNav } from "@/components/docs/top-nav";
 import { TableOfContents } from "@/components/docs/toc";
 
-export default function DocsLayout({ children }: { children: React.ReactNode }) {
+export default function DocsLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="min-h-[100dvh]">
       <TopNav />
@@ -716,9 +776,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
         <aside className="hidden lg:block w-64 shrink-0 border-r border-border">
           <Sidebar />
         </aside>
-        <main className="flex-1 min-w-0 py-8 px-6 lg:px-10">
-          {children}
-        </main>
+        <main className="flex-1 min-w-0 py-8 px-6 lg:px-10">{children}</main>
         <aside className="hidden xl:block w-56 shrink-0">
           <div className="pl-6 py-8">
             <TableOfContents />
@@ -838,6 +896,7 @@ git commit -m "feat: add navigation system and docs layout with sidebar"
 ### Task 3: shadcn/ui Components Setup + Doc Template Components
 
 **Files:**
+
 - Create: `components.json`
 - Create: `components/ui/button.tsx` (shadcn button)
 - Create: `components/ui/card.tsx`
@@ -905,15 +964,22 @@ import { cn } from "@/lib/utils";
 type Status = "stable" | "beta" | "deprecated" | "new";
 
 const statusStyles: Record<Status, string> = {
-  stable: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800",
+  stable:
+    "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800",
   beta: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 border-amber-200 dark:border-amber-800",
-  deprecated: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-200 dark:border-red-800",
+  deprecated:
+    "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400 border-red-200 dark:border-red-800",
   new: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 border-blue-200 dark:border-blue-800",
 };
 
 export function StatusBadge({ status }: { status: Status }) {
   return (
-    <span className={cn("inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium", statusStyles[status])}>
+    <span
+      className={cn(
+        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium",
+        statusStyles[status],
+      )}
+    >
       {status}
     </span>
   );
@@ -925,7 +991,13 @@ export function StatusBadge({ status }: { status: Status }) {
 ```tsx
 import { CheckCircle2, XCircle } from "lucide-react";
 
-export function UsageGuidelines({ do: doList, dont: dontList }: { do: string[]; dont: string[] }) {
+export function UsageGuidelines({
+  do: doList,
+  dont: dontList,
+}: {
+  do: string[];
+  dont: string[];
+}) {
   return (
     <div className="my-8 grid gap-6 sm:grid-cols-2">
       <div className="rounded-lg border border-emerald-200 bg-emerald-50/50 dark:border-emerald-900 dark:bg-emerald-950/20 p-4">
@@ -935,7 +1007,10 @@ export function UsageGuidelines({ do: doList, dont: dontList }: { do: string[]; 
         </h3>
         <ul className="space-y-1.5">
           {doList.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+            <li
+              key={item}
+              className="flex items-start gap-2 text-sm text-muted-foreground"
+            >
               <span className="mt-0.5 size-1.5 rounded-full bg-emerald-500 shrink-0" />
               {item}
             </li>
@@ -949,7 +1024,10 @@ export function UsageGuidelines({ do: doList, dont: dontList }: { do: string[]; 
         </h3>
         <ul className="space-y-1.5">
           {dontList.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+            <li
+              key={item}
+              className="flex items-start gap-2 text-sm text-muted-foreground"
+            >
               <span className="mt-0.5 size-1.5 rounded-full bg-red-500 shrink-0" />
               {item}
             </li>
@@ -977,19 +1055,38 @@ export function PropsTable({ props }: { props: PropDef[] }) {
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-border bg-muted/50">
-            <th className="px-4 py-3 text-left font-medium text-foreground">Prop</th>
-            <th className="px-4 py-3 text-left font-medium text-foreground">Type</th>
-            <th className="px-4 py-3 text-left font-medium text-foreground">Default</th>
-            <th className="px-4 py-3 text-left font-medium text-foreground">Description</th>
+            <th className="px-4 py-3 text-left font-medium text-foreground">
+              Prop
+            </th>
+            <th className="px-4 py-3 text-left font-medium text-foreground">
+              Type
+            </th>
+            <th className="px-4 py-3 text-left font-medium text-foreground">
+              Default
+            </th>
+            <th className="px-4 py-3 text-left font-medium text-foreground">
+              Description
+            </th>
           </tr>
         </thead>
         <tbody>
           {props.map((prop) => (
-            <tr key={prop.name} className="border-b border-border last:border-0">
-              <td className="px-4 py-3 font-mono text-xs text-primary">{prop.name}</td>
-              <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{prop.type}</td>
-              <td className="px-4 py-3 font-mono text-xs text-muted-foreground">{prop.default}</td>
-              <td className="px-4 py-3 text-muted-foreground">{prop.description}</td>
+            <tr
+              key={prop.name}
+              className="border-b border-border last:border-0"
+            >
+              <td className="px-4 py-3 font-mono text-xs text-primary">
+                {prop.name}
+              </td>
+              <td className="px-4 py-3 font-mono text-xs text-muted-foreground">
+                {prop.type}
+              </td>
+              <td className="px-4 py-3 font-mono text-xs text-muted-foreground">
+                {prop.default}
+              </td>
+              <td className="px-4 py-3 text-muted-foreground">
+                {prop.description}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -1008,7 +1105,13 @@ import { useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function CodeBlock({ code, language = "tsx" }: { code: string; language?: string }) {
+export function CodeBlock({
+  code,
+  language = "tsx",
+}: {
+  code: string;
+  language?: string;
+}) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -1020,12 +1123,18 @@ export function CodeBlock({ code, language = "tsx" }: { code: string; language?:
   return (
     <div className="relative my-6 rounded-lg border border-border overflow-hidden">
       <div className="flex items-center justify-between bg-muted px-4 py-2 border-b border-border">
-        <span className="text-xs text-muted-foreground font-mono">{language}</span>
+        <span className="text-xs text-muted-foreground font-mono">
+          {language}
+        </span>
         <button
           onClick={handleCopy}
           className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
         >
-          {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
+          {copied ? (
+            <Check className="size-3.5" />
+          ) : (
+            <Copy className="size-3.5" />
+          )}
           {copied ? "Copied!" : "Copy"}
         </button>
       </div>
@@ -1076,7 +1185,13 @@ export function VariantGrid({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function VariantCell({ label, children }: { label: string; children: React.ReactNode }) {
+export function VariantCell({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex flex-col items-center gap-3 rounded-lg border border-border p-4">
       <div className="flex items-center justify-center min-h-[40px]">
@@ -1103,6 +1218,7 @@ git commit -m "feat: add shadcn/ui components and doc template components"
 ### Task 4: Landing Page
 
 **Files:**
+
 - Create: `components/landing/hero.tsx`
 - Create: `components/landing/stats.tsx`
 - Create: `components/landing/featured-sections.tsx`
@@ -1122,15 +1238,16 @@ export function Hero() {
         <div className="max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs font-medium text-muted-foreground">
             <span className="size-1.5 rounded-full bg-primary" />
-            v0.1.0 — Beta release
+            v0.1.0 - Beta release
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-balance">
             A scalable component library built with{" "}
             <span className="text-primary">Tailwind CSS</span> + shadcn/ui
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-[65ch] leading-relaxed">
-            Centralized documentation for reusable UI components. Visual consistency,
-            standardized interaction patterns, and faster UI development across all products.
+            Centralized documentation for reusable UI components. Visual
+            consistency, standardized interaction patterns, and faster UI
+            development across all products.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -1160,9 +1277,21 @@ export function Hero() {
 
 ```tsx
 const stats = [
-  { value: "14", label: "Components", description: "Production-ready UI components" },
-  { value: "6", label: "Foundations", description: "Design tokens and guidelines" },
-  { value: "100%", label: "Accessible", description: "WCAG AA compliant by default" },
+  {
+    value: "14",
+    label: "Components",
+    description: "Production-ready UI components",
+  },
+  {
+    value: "6",
+    label: "Foundations",
+    description: "Design tokens and guidelines",
+  },
+  {
+    value: "100%",
+    label: "Accessible",
+    description: "WCAG AA compliant by default",
+  },
   { value: "2", label: "Themes", description: "Light + Dark mode support" },
 ];
 
@@ -1173,9 +1302,15 @@ export function Stats() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-3xl font-bold tracking-tight text-foreground">{stat.value}</div>
-              <div className="mt-1 text-sm font-medium text-foreground">{stat.label}</div>
-              <div className="mt-0.5 text-xs text-muted-foreground">{stat.description}</div>
+              <div className="text-3xl font-bold tracking-tight text-foreground">
+                {stat.value}
+              </div>
+              <div className="mt-1 text-sm font-medium text-foreground">
+                {stat.label}
+              </div>
+              <div className="mt-0.5 text-xs text-muted-foreground">
+                {stat.description}
+              </div>
             </div>
           ))}
         </div>
@@ -1195,25 +1330,29 @@ import { ArrowRight } from "lucide-react";
 const features = [
   {
     title: "Foundations",
-    description: "Colors, typography, spacing, and design tokens that define the visual language.",
+    description:
+      "Colors, typography, spacing, and design tokens that define the visual language.",
     icon: Palette,
     href: "/foundations",
   },
   {
     title: "Components",
-    description: "Reusable UI components with variants, states, and interactive examples.",
+    description:
+      "Reusable UI components with variants, states, and interactive examples.",
     icon: Layout,
     href: "/components",
   },
   {
     title: "Accessibility",
-    description: "WCAG-compliant components with keyboard support and screen reader guidance.",
+    description:
+      "WCAG-compliant components with keyboard support and screen reader guidance.",
     icon: Accessibility,
     href: "/accessibility",
   },
   {
     title: "Design Tokens",
-    description: "Semantic tokens for consistent theming across light and dark modes.",
+    description:
+      "Semantic tokens for consistent theming across light and dark modes.",
     icon: Paintbrush,
     href: "/foundations/colors",
   },
@@ -1261,7 +1400,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const entries = [
-  { version: "0.1.0", date: "July 2026", items: ["14 components", "6 foundation pages", "Light + Dark theme"] },
+  {
+    version: "0.1.0",
+    date: "July 2026",
+    items: ["14 components", "6 foundation pages", "Light + Dark theme"],
+  },
 ];
 
 export function ChangelogPreview() {
@@ -1281,12 +1424,19 @@ export function ChangelogPreview() {
           {entries.map((entry) => (
             <div key={entry.version} className="flex items-start gap-6 p-4">
               <div className="shrink-0">
-                <div className="text-sm font-semibold text-foreground">v{entry.version}</div>
-                <div className="text-xs text-muted-foreground">{entry.date}</div>
+                <div className="text-sm font-semibold text-foreground">
+                  v{entry.version}
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  {entry.date}
+                </div>
               </div>
               <ul className="space-y-1">
                 {entry.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 text-sm text-muted-foreground"
+                  >
                     <span className="size-1 rounded-full bg-primary" />
                     {item}
                   </li>
@@ -1341,7 +1491,7 @@ git commit -m "feat: build landing page with hero, stats, featured sections, cha
 
 ---
 
-### Task 5: Component Documentation — Button (first full component page)
+### Task 5: Component Documentation - Button (first full component page)
 
 **File:** Create `components/docs/doc-layout-shell.tsx`
 **File:** Create `app/(docs)/components/button/page.tsx`
@@ -1360,18 +1510,28 @@ type DocShellProps = {
   children: React.ReactNode;
 };
 
-export function DocShell({ title, description, status, children }: DocShellProps) {
+export function DocShell({
+  title,
+  description,
+  status,
+  children,
+}: DocShellProps) {
   return (
     <article className="max-w-none">
       <Breadcrumb />
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
-          <h1 id={title.toLowerCase()} className="text-3xl font-bold tracking-tight text-foreground">
+          <h1
+            id={title.toLowerCase()}
+            className="text-3xl font-bold tracking-tight text-foreground"
+          >
             {title}
           </h1>
           <StatusBadge status={status} />
         </div>
-        <p className="text-lg text-muted-foreground max-w-[65ch]">{description}</p>
+        <p className="text-lg text-muted-foreground max-w-[65ch]">
+          {description}
+        </p>
       </div>
       {children}
     </article>
@@ -1393,10 +1553,30 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const props: PropDef[] = [
-  { name: "variant", type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "link"', default: '"default"', description: "Visual style variant" },
-  { name: "size", type: '"default" | "sm" | "lg" | "icon"', default: '"default"', description: "Component size" },
-  { name: "disabled", type: "boolean", default: "false", description: "Prevent interaction" },
-  { name: "asChild", type: "boolean", default: "false", description: "Render as child element (Radix)" },
+  {
+    name: "variant",
+    type: '"default" | "secondary" | "outline" | "ghost" | "destructive" | "link"',
+    default: '"default"',
+    description: "Visual style variant",
+  },
+  {
+    name: "size",
+    type: '"default" | "sm" | "lg" | "icon"',
+    default: '"default"',
+    description: "Component size",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "Prevent interaction",
+  },
+  {
+    name: "asChild",
+    type: "boolean",
+    default: "false",
+    description: "Render as child element (Radix)",
+  },
 ];
 
 export default function ButtonPage() {
@@ -1421,17 +1601,39 @@ export default function ButtonPage() {
         ]}
       />
 
-      <h2 id="variants" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Variants</h2>
+      <h2
+        id="variants"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Variants
+      </h2>
       <VariantGrid>
-        <VariantCell label="Default"><Button>Button</Button></VariantCell>
-        <VariantCell label="Secondary"><Button variant="secondary">Button</Button></VariantCell>
-        <VariantCell label="Outline"><Button variant="outline">Button</Button></VariantCell>
-        <VariantCell label="Ghost"><Button variant="ghost">Button</Button></VariantCell>
-        <VariantCell label="Destructive"><Button variant="destructive">Button</Button></VariantCell>
-        <VariantCell label="Link"><Button variant="link">Button</Button></VariantCell>
+        <VariantCell label="Default">
+          <Button>Button</Button>
+        </VariantCell>
+        <VariantCell label="Secondary">
+          <Button variant="secondary">Button</Button>
+        </VariantCell>
+        <VariantCell label="Outline">
+          <Button variant="outline">Button</Button>
+        </VariantCell>
+        <VariantCell label="Ghost">
+          <Button variant="ghost">Button</Button>
+        </VariantCell>
+        <VariantCell label="Destructive">
+          <Button variant="destructive">Button</Button>
+        </VariantCell>
+        <VariantCell label="Link">
+          <Button variant="link">Button</Button>
+        </VariantCell>
       </VariantGrid>
 
-      <h2 id="sizes" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Sizes</h2>
+      <h2
+        id="sizes"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Sizes
+      </h2>
       <ComponentPreview>
         <div className="flex flex-wrap items-center gap-4">
           <Button size="sm">Small</Button>
@@ -1440,11 +1642,22 @@ export default function ButtonPage() {
         </div>
       </ComponentPreview>
 
-      <h2 id="states" className="text-2xl font-semibold tracking-tight mt-12 mb-4">States</h2>
+      <h2
+        id="states"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        States
+      </h2>
       <VariantGrid>
-        <VariantCell label="Default"><Button>Default</Button></VariantCell>
-        <VariantCell label="Hover"><Button className="hover:bg-primary/90">Hover</Button></VariantCell>
-        <VariantCell label="Disabled"><Button disabled>Disabled</Button></VariantCell>
+        <VariantCell label="Default">
+          <Button>Default</Button>
+        </VariantCell>
+        <VariantCell label="Hover">
+          <Button className="hover:bg-primary/90">Hover</Button>
+        </VariantCell>
+        <VariantCell label="Disabled">
+          <Button disabled>Disabled</Button>
+        </VariantCell>
         <VariantCell label="Loading">
           <Button disabled>
             <span className="size-4 animate-spin rounded-full border-2 border-current border-t-transparent mr-2" />
@@ -1453,19 +1666,36 @@ export default function ButtonPage() {
         </VariantCell>
       </VariantGrid>
 
-      <h2 id="props" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Props</h2>
+      <h2
+        id="props"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Props
+      </h2>
       <PropsTable props={props} />
 
-      <h2 id="accessibility" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Accessibility</h2>
+      <h2
+        id="accessibility"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Accessibility
+      </h2>
       <div className="my-4 space-y-3 text-sm text-muted-foreground">
-        <p>✓ Keyboard support via Space and Enter keys (native button behavior)</p>
+        <p>
+          ✓ Keyboard support via Space and Enter keys (native button behavior)
+        </p>
         <p>✓ Focus ring visible on keyboard navigation using :focus-visible</p>
         <p>✓ ARIA button role applied automatically when using asChild</p>
         <p>✓ Disabled state uses aria-disabled and reduced opacity</p>
         <p>✓ Minimum color contrast ratio of 4.5:1 for text on background</p>
       </div>
 
-      <h2 id="usage" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Usage</h2>
+      <h2
+        id="usage"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Usage
+      </h2>
       <CodeBlock
         language="tsx"
         code={`import { Button } from "@/components/ui/button";
@@ -1480,21 +1710,38 @@ export function MyComponent() {
 }`}
       />
 
-      <h2 id="related" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Related Components</h2>
+      <h2
+        id="related"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Related Components
+      </h2>
       <div className="flex flex-wrap gap-3 my-4">
-        <Link href="/components/dropdown" className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+        <Link
+          href="/components/dropdown"
+          className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
           Dropdown <ArrowRight className="size-3.5" />
         </Link>
-        <Link href="/components/modal" className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+        <Link
+          href="/components/modal"
+          className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
           Modal <ArrowRight className="size-3.5" />
         </Link>
       </div>
 
       <div className="mt-16 flex items-center justify-between border-t border-border pt-6">
-        <Link href="/components/badge" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+        <Link
+          href="/components/badge"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
           <ArrowLeft className="size-4" /> Badge
         </Link>
-        <Link href="/components/card" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+        <Link
+          href="/components/card"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
           Card <ArrowRight className="size-4" />
         </Link>
       </div>
@@ -1533,7 +1780,14 @@ import { UsageGuidelines } from "@/components/docs/usage-guidelines";
 import { ComponentPreview } from "@/components/docs/component-preview";
 import { PropsTable, type PropDef } from "@/components/docs/props-table";
 import { CodeBlock } from "@/components/docs/code-block";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -1542,12 +1796,29 @@ const props: PropDef[] = [];
 
 export default function CardPage() {
   return (
-    <DocShell title="Card" description="Containers for grouping related content and actions." status="stable">
+    <DocShell
+      title="Card"
+      description="Containers for grouping related content and actions."
+      status="stable"
+    >
       <UsageGuidelines
-        do={["Grouping related information", "Displaying content previews", "Dashboard widgets and stats"]}
-        dont={["Nesting cards inside cards", "Using cards for simple dividers", "Overloading with too much content"]}
+        do={[
+          "Grouping related information",
+          "Displaying content previews",
+          "Dashboard widgets and stats",
+        ]}
+        dont={[
+          "Nesting cards inside cards",
+          "Using cards for simple dividers",
+          "Overloading with too much content",
+        ]}
       />
-      <h2 id="variants" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Examples</h2>
+      <h2
+        id="variants"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Examples
+      </h2>
       <ComponentPreview>
         <Card className="w-full max-w-sm">
           <CardHeader>
@@ -1555,20 +1826,50 @@ export default function CardPage() {
             <CardDescription>Card description goes here</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">Card content area. Add any React components here.</p>
+            <p className="text-sm text-muted-foreground">
+              Card content area. Add any React components here.
+            </p>
           </CardContent>
           <CardFooter>
             <Button className="w-full">Action</Button>
           </CardFooter>
         </Card>
       </ComponentPreview>
-      <h2 id="accessibility" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Accessibility</h2>
-      <p className="text-sm text-muted-foreground">✓ Cards are regions with aria-label when interactive. ✓ Focusable when used as a link or button.</p>
-      <h2 id="usage" className="text-2xl font-semibold tracking-tight mt-12 mb-4">Usage</h2>
-      <CodeBlock language="tsx" code={'import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";\n\n<Card>\n  <CardHeader>\n    <CardTitle>Title</CardTitle>\n  </CardHeader>\n  <CardContent>\n    <p>Content</p>\n  </CardContent>\n</Card>'} />
+      <h2
+        id="accessibility"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Accessibility
+      </h2>
+      <p className="text-sm text-muted-foreground">
+        ✓ Cards are regions with aria-label when interactive. ✓ Focusable when
+        used as a link or button.
+      </p>
+      <h2
+        id="usage"
+        className="text-2xl font-semibold tracking-tight mt-12 mb-4"
+      >
+        Usage
+      </h2>
+      <CodeBlock
+        language="tsx"
+        code={
+          'import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";\n\n<Card>\n  <CardHeader>\n    <CardTitle>Title</CardTitle>\n  </CardHeader>\n  <CardContent>\n    <p>Content</p>\n  </CardContent>\n</Card>'
+        }
+      />
       <div className="mt-16 flex items-center justify-between border-t border-border pt-6">
-        <Link href="/components/button" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="size-4" /> Button</Link>
-        <Link href="/components/input" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">Input <ArrowRight className="size-4" /></Link>
+        <Link
+          href="/components/button"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+        >
+          <ArrowLeft className="size-4" /> Button
+        </Link>
+        <Link
+          href="/components/input"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+        >
+          Input <ArrowRight className="size-4" />
+        </Link>
       </div>
     </DocShell>
   );
@@ -1578,6 +1879,7 @@ export default function CardPage() {
 - [ ] **Step 2: Create remaining 13 component pages**
 
 Each page follows the exact same pattern as Button and Card:
+
 - Import DocShell, UsageGuidelines, ComponentPreview, VariantGrid, PropsTable, CodeBlock
 - 10-section template: header → guidelines → playground → variants → states → props → a11y → code → related → prev/next
 
@@ -1594,6 +1896,7 @@ done
 ```
 
 Each component page needs:
+
 - Component-specific usage guidelines (do/dont)
 - Component-specific live preview
 - Variants specific to that component
@@ -1632,14 +1935,22 @@ const colorGroups = [
     title: "Primary",
     colors: [
       { name: "Primary", hex: "#dc2626", cssVar: "--primary" },
-      { name: "Primary Foreground", hex: "#ffffff", cssVar: "--primary-foreground" },
+      {
+        name: "Primary Foreground",
+        hex: "#ffffff",
+        cssVar: "--primary-foreground",
+      },
     ],
   },
   {
     title: "Secondary",
     colors: [
       { name: "Secondary", hex: "#1e3a5f", cssVar: "--secondary" },
-      { name: "Secondary Foreground", hex: "#f8fafc", cssVar: "--secondary-foreground" },
+      {
+        name: "Secondary Foreground",
+        hex: "#f8fafc",
+        cssVar: "--secondary-foreground",
+      },
     ],
   },
   {
@@ -1648,7 +1959,11 @@ const colorGroups = [
       { name: "Background", hex: "#f8fafc", cssVar: "--background" },
       { name: "Foreground", hex: "#0f172a", cssVar: "--foreground" },
       { name: "Muted", hex: "#f1f5f9", cssVar: "--muted" },
-      { name: "Muted Foreground", hex: "#475569", cssVar: "--muted-foreground" },
+      {
+        name: "Muted Foreground",
+        hex: "#475569",
+        cssVar: "--muted-foreground",
+      },
       { name: "Border", hex: "#e2e8f0", cssVar: "--border" },
     ],
   },
@@ -1656,18 +1971,34 @@ const colorGroups = [
 
 export default function ColorsPage() {
   return (
-    <DocShell title="Colors" description="Semantic color tokens for the design system." status="stable">
+    <DocShell
+      title="Colors"
+      description="Semantic color tokens for the design system."
+      status="stable"
+    >
       {colorGroups.map((group) => (
         <div key={group.title} className="mb-10">
-          <h2 id={group.title.toLowerCase()} className="text-xl font-semibold mb-4">{group.title}</h2>
+          <h2
+            id={group.title.toLowerCase()}
+            className="text-xl font-semibold mb-4"
+          >
+            {group.title}
+          </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {group.colors.map((color) => (
-              <div key={color.name} className="rounded-lg border border-border overflow-hidden">
+              <div
+                key={color.name}
+                className="rounded-lg border border-border overflow-hidden"
+              >
                 <div className="h-20" style={{ backgroundColor: color.hex }} />
                 <div className="p-3 space-y-1">
                   <div className="text-sm font-medium">{color.name}</div>
-                  <div className="font-mono text-xs text-muted-foreground">{color.hex}</div>
-                  <div className="font-mono text-xs text-muted-foreground">{color.cssVar}</div>
+                  <div className="font-mono text-xs text-muted-foreground">
+                    {color.hex}
+                  </div>
+                  <div className="font-mono text-xs text-muted-foreground">
+                    {color.cssVar}
+                  </div>
                 </div>
               </div>
             ))}

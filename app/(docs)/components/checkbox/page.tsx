@@ -11,7 +11,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const props: PropDef[] = [
   { name: "checked", type: "boolean | 'indeterminate'", default: "false", description: "Controlled checked state" },
   { name: "disabled", type: "boolean", default: "false", description: "Prevent interaction" },
-  { name: "onCheckedChange", type: "(checked: boolean) => void", default: "—", description: "Change handler" },
+  { name: "onCheckedChange", type: "(checked: boolean) => void", default: "-", description: "Change handler" },
 ];
 
 export default function CheckboxPage() {

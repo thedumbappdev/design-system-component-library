@@ -6,7 +6,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
     <div className="min-h-[100dvh]">
       <div className="container-main flex pt-24">
         <aside className="hidden lg:block w-64 shrink-0">
-  <div className="sticky top-28 max-h-[calc(100dvh-8rem)] overflow-y-auto border-r border-border pr-4">
+  <div className="sticky top-28 max-h-[calc(100dvh-8rem)] overflow-y-auto border-r border-border pr-4 bg-background">
     <Sidebar />
   </div>
 </aside>

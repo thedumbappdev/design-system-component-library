@@ -10,8 +10,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const props: PropDef[] = [
   { name: "variant", type: '"default" | "destructive" | "warning" | "success"', default: '"default"', description: "Alert style variant" },
-  { name: "title", type: "string", default: "—", description: "Alert title text" },
-  { name: "children", type: "React.ReactNode", default: "—", description: "Alert description content" },
+  { name: "title", type: "string", default: "-", description: "Alert title text" },
+  { name: "children", type: "React.ReactNode", default: "-", description: "Alert description content" },
 ];
 
 function Alert({ variant = "default", title, children }: { variant?: "default" | "destructive" | "warning" | "success"; title: string; children: React.ReactNode }) {

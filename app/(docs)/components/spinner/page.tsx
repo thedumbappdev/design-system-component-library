@@ -9,7 +9,7 @@ import { ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
 
 const props: PropDef[] = [
   { name: "size", type: '"sm" | "md" | "lg"', default: '"md"', description: "Spinner size" },
-  { name: "className", type: "string", default: "—", description: "Additional CSS classes" },
+  { name: "className", type: "string", default: "-", description: "Additional CSS classes" },
 ];
 
 function Spinner({ size = "md", className }: { size?: "sm" | "md" | "lg"; className?: string }) {

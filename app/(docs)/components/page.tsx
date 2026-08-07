@@ -16,7 +16,7 @@ export default function ComponentsPage() {
       <div className="mb-10">
         <h1 id="overview" className="text-3xl font-bold tracking-tight text-foreground">Components</h1>
         <p className="text-lg text-muted-foreground max-w-[65ch] mt-2 leading-relaxed">
-          Browse the complete component library — from foundational design tokens to interactive UI components.
+          Browse the complete component library - from foundational design tokens to interactive UI components.
         </p>
       </div>
       <div className="grid gap-6 sm:grid-cols-2">

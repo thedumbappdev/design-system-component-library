@@ -15,7 +15,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const props: PropDef[] = [
   { name: "open", type: "boolean", default: "false", description: "Controlled open state" },
   { name: "defaultOpen", type: "boolean", default: "false", description: "Default open state" },
-  { name: "onOpenChange", type: "(open: boolean) => void", default: "—", description: "Open state change handler" },
+  { name: "onOpenChange", type: "(open: boolean) => void", default: "-", description: "Open state change handler" },
 ];
 
 export default function ModalPage() {

@@ -9,11 +9,11 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const props: PropDef[] = [
-  { name: "value", type: "string", default: "—", description: "Controlled selected value" },
-  { name: "defaultValue", type: "string", default: "—", description: "Default selected value" },
-  { name: "onValueChange", type: "(value: string) => void", default: "—", description: "Change handler" },
+  { name: "value", type: "string", default: "-", description: "Controlled selected value" },
+  { name: "defaultValue", type: "string", default: "-", description: "Default selected value" },
+  { name: "onValueChange", type: "(value: string) => void", default: "-", description: "Change handler" },
   { name: "disabled", type: "boolean", default: "false", description: "Prevent interaction" },
-  { name: "placeholder", type: "string", default: "—", description: "Placeholder when no value selected" },
+  { name: "placeholder", type: "string", default: "-", description: "Placeholder when no value selected" },
 ];
 
 export default function SelectPage() {

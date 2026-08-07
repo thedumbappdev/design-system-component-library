@@ -18,13 +18,13 @@
 
 The MVP should serve as a living design reference for designers and developers by providing:
 
-* Centralized documentation for reusable UI components
-* Visual consistency across products
-* Standardized interaction patterns
-* Faster UI development
-* Reduced design and development duplication
-* Easy onboarding for new developers
-* Single source of truth for frontend UI
+- Centralized documentation for reusable UI components
+- Visual consistency across products
+- Standardized interaction patterns
+- Faster UI development
+- Reduced design and development duplication
+- Easy onboarding for new developers
+- Single source of truth for frontend UI
 
 ---
 
@@ -36,9 +36,9 @@ The documentation should reflect the same quality as the components themselves.
 
 Every page should answer:
 
-* What is this component?
-* When should I use it?
-* When should I avoid it?
+- What is this component?
+- When should I use it?
+- When should I avoid it?
 
 ---
 
@@ -78,11 +78,11 @@ Advanced usage later.
 
 Documentation should prioritize:
 
-* Variants
-* States
-* Props
-* Best practices
-* Accessibility
+- Variants
+- States
+- Props
+- Best practices
+- Accessibility
 
 ---
 
@@ -106,9 +106,9 @@ Guide users toward component exploration.
 
 Contains:
 
-* Design System Name
-* Version
-* Short description
+- Design System Name
+- Version
+- Short description
 
 Example:
 
@@ -130,11 +130,11 @@ Secondary CTA
 
 Example cards
 
-* Components
-* Foundations
-* Patterns
-* Tokens
-* Documentation Coverage
+- Components
+- Foundations
+- Patterns
+- Tokens
+- Documentation Coverage
 
 ---
 
@@ -142,10 +142,10 @@ Example cards
 
 Cards linking to
 
-* Foundations
-* Components
-* Accessibility
-* Design Tokens
+- Foundations
+- Components
+- Accessibility
+- Design Tokens
 
 ---
 
@@ -200,15 +200,15 @@ Top Navigation
 
 Contains
 
-* Search
-* Theme Switch
-* Version Selector
-* GitHub Placeholder
-* Documentation
+- Search
+- Theme Switch
+- Version Selector
+- GitHub Placeholder
+- Documentation
 
 ---
 
-# User Flow — Discovering Components
+# User Flow - Discovering Components
 
 ## Flow 1
 
@@ -308,9 +308,9 @@ Example
 
 Button page links to
 
-* Icons
-* Loading Spinner
-* Dropdown
+- Icons
+- Loading Spinner
+- Dropdown
 
 ---
 
@@ -322,72 +322,72 @@ Button page links to
 
 ## 1. Foundations
 
-* Colors
-* Typography
-* Spacing
-* Radius
-* Elevation
-* Grid
-* Icons
+- Colors
+- Typography
+- Spacing
+- Radius
+- Elevation
+- Grid
+- Icons
 
 ---
 
 ## 2. Basic Elements
 
-* Button
-* Badge
-* Avatar
-* Icon
+- Button
+- Badge
+- Avatar
+- Icon
 
 ---
 
 ## 3. Forms
 
-* Text Input
-* Textarea
-* Checkbox
-* Radio
-* Switch
-* Select
-* Date Picker (Future)
+- Text Input
+- Textarea
+- Checkbox
+- Radio
+- Switch
+- Select
+- Date Picker (Future)
 
 ---
 
 ## 4. Navigation
 
-* Navbar
-* Breadcrumb
-* Sidebar
-* Pagination
-* Tabs
+- Navbar
+- Breadcrumb
+- Sidebar
+- Pagination
+- Tabs
 
 ---
 
 ## 5. Data Display
 
-* Card
-* Table
-* Empty State
-* Skeleton
-* List
+- Card
+- Table
+- Empty State
+- Skeleton
+- List
 
 ---
 
 ## 6. Feedback
 
-* Toast
-* Alert
-* Progress
-* Spinner
-* Modal
+- Toast
+- Alert
+- Progress
+- Spinner
+- Modal
 
 ---
 
 ## 7. Overlays
 
-* Tooltip
-* Popover
-* Dropdown
+- Tooltip
+- Popover
+- Dropdown
 
 ---
 
@@ -411,17 +411,17 @@ Short Description
 
 ## Use When
 
-* Primary action
-* Form submission
-* Dialog actions
+- Primary action
+- Form submission
+- Dialog actions
 
 ---
 
 ## Avoid
 
-* Navigation links
-* Long paragraphs
-* Multiple primary buttons
+- Navigation links
+- Long paragraphs
+- Multiple primary buttons
 
 ---
 
@@ -599,32 +599,32 @@ Future
 
 Variants
 
-* Primary
-* Secondary
-* Outline
-* Ghost
-* Disabled
-* Loading
-* Icon
+- Primary
+- Secondary
+- Outline
+- Ghost
+- Disabled
+- Loading
+- Icon
 
 ---
 
 ## Cards
 
-* Basic
-* Image
-* Statistics
-* Action Card
+- Basic
+- Image
+- Statistics
+- Action Card
 
 ---
 
 ## Inputs
 
-* Text
-* Email
-* Password
-* Search
-* Textarea
+- Text
+- Email
+- Password
+- Search
+- Textarea
 
 ---
 
@@ -646,17 +646,17 @@ Variants
 
 ## Modal
 
-* Default
-* Confirmation
+- Default
+- Confirmation
 
 ---
 
 ## Toast
 
-* Success
-* Error
-* Warning
-* Info
+- Success
+- Error
+- Warning
+- Info
 
 ---
 
@@ -742,20 +742,20 @@ Rich Text Editor
 
 Additional component families may include:
 
-* Data Tables
-* Charts
-* Date & Time Pickers
-* Command Palette
-* File Upload
-* Multi-select
-* Tree View
-* Timeline
-* Notifications Center
-* Chat Components
-* AI Assistant UI Patterns
-* Dashboard Widgets
-* Marketing Components
-* E-commerce Components
+- Data Tables
+- Charts
+- Date & Time Pickers
+- Command Palette
+- File Upload
+- Multi-select
+- Tree View
+- Timeline
+- Notifications Center
+- Chat Components
+- AI Assistant UI Patterns
+- Dashboard Widgets
+- Marketing Components
+- E-commerce Components
 
 ---
 
@@ -771,12 +771,12 @@ Placeholder
 
 Suggested characteristics
 
-* Modern
-* Clean
-* Spacious
-* Developer-focused
-* Documentation-first
-* Minimal distractions
+- Modern
+- Clean
+- Spacious
+- Developer-focused
+- Documentation-first
+- Minimal distractions
 
 ---
 
@@ -848,14 +848,14 @@ Scrollable prop tables
 
 Dedicated Typography page showing:
 
-* Font Families
-* Display Scale
-* Heading Hierarchy
-* Body Styles
-* Caption Styles
-* Code Styles
-* Line Heights
-* Font Weights
+- Font Families
+- Display Scale
+- Heading Hierarchy
+- Body Styles
+- Caption Styles
+- Code Styles
+- Line Heights
+- Font Weights
 
 ---
 
@@ -889,11 +889,11 @@ Interactive
 
 Each token should include:
 
-* Visual swatch
-* Token name
-* Hex value
-* Semantic usage
-* Contrast guidance
+- Visual swatch
+- Token name
+- Hex value
+- Semantic usage
+- Contrast guidance
 
 ---
 
@@ -955,7 +955,7 @@ Usage examples
 
 ---
 
-# F. User Flow — Getting Started
+# F. User Flow - Getting Started
 
 ---
 
@@ -1132,8 +1132,8 @@ Home
 
 The MVP should enable a designer or developer to:
 
-* Understand the design system within **5 minutes** of first visit.
-* Find any documented component in **three clicks or fewer**.
-* Compare component variants and interaction states without leaving the page.
-* Learn recommended usage, accessibility guidance, and available properties through a consistent documentation template.
-* Use the showcase as the single source of truth for foundational design tokens and reusable UI components, providing a scalable foundation for future expansion.
+- Understand the design system within **5 minutes** of first visit.
+- Find any documented component in **three clicks or fewer**.
+- Compare component variants and interaction states without leaving the page.
+- Learn recommended usage, accessibility guidance, and available properties through a consistent documentation template.
+- Use the showcase as the single source of truth for foundational design tokens and reusable UI components, providing a scalable foundation for future expansion.

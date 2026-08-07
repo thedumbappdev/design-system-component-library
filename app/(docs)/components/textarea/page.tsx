@@ -9,9 +9,9 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const props: PropDef[] = [
-  { name: "placeholder", type: "string", default: "—", description: "Placeholder text" },
+  { name: "placeholder", type: "string", default: "-", description: "Placeholder text" },
   { name: "disabled", type: "boolean", default: "false", description: "Prevent interaction" },
-  { name: "rows", type: "number", default: "—", description: "Number of visible rows" },
+  { name: "rows", type: "number", default: "-", description: "Number of visible rows" },
 ];
 
 export default function TextareaPage() {

@@ -46,19 +46,19 @@ export default function RadiusPage() {
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Cards & Containers</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">rounded-xl (0.75rem) — the default --radius value used by all premium components.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">rounded-xl (0.75rem) - the default --radius value used by all premium components.</p>
         </div>
         <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Buttons & Inputs</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">rounded-md (0.375rem) — slightly tighter radius for interactive elements.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">rounded-md (0.375rem) - slightly tighter radius for interactive elements.</p>
         </div>
         <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Badges & Pills</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">rounded-full — pill shape for tags, badges, and status indicators.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">rounded-full - pill shape for tags, badges, and status indicators.</p>
         </div>
         <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="text-sm font-semibold mb-2">Modals & Dialogs</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">rounded-2xl (1rem) — more pronounced radius for elevated surfaces.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">rounded-2xl (1rem) - more pronounced radius for elevated surfaces.</p>
         </div>
       </div>
     </DocShell>

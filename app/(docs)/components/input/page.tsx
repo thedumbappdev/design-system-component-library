@@ -10,7 +10,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const props: PropDef[] = [
   { name: "type", type: '"text" | "email" | "password" | "number" | "search" | "tel" | "url"', default: '"text"', description: "HTML input type" },
-  { name: "placeholder", type: "string", default: "—", description: "Placeholder text" },
+  { name: "placeholder", type: "string", default: "-", description: "Placeholder text" },
   { name: "disabled", type: "boolean", default: "false", description: "Prevent interaction" },
 ];
 

@@ -7,7 +7,7 @@ import { TopNav } from "@/components/docs/top-nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Component Library — Design System",
+	title: "Component Library - Design System",
 	description:
 		"A scalable component library built with Tailwind CSS + shadcn/ui for modern applications.",
 };

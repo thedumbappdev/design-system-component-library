@@ -11,8 +11,8 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const props: PropDef[] = [
-  { name: "message", type: "string | React.ReactNode", default: "—", description: "Toast message content" },
-  { name: "description", type: "string", default: "—", description: "Optional description text" },
+  { name: "message", type: "string | React.ReactNode", default: "-", description: "Toast message content" },
+  { name: "description", type: "string", default: "-", description: "Optional description text" },
   { name: "duration", type: "number", default: "4000", description: "Auto-dismiss duration in ms" },
   { name: "position", type: '"top-right" | "bottom-right" | "top-center" | "bottom-center"', default: '"bottom-right"', description: "Toast position" },
 ];

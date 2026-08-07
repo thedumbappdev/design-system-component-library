@@ -9,9 +9,9 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const props: PropDef[] = [
-  { name: "value", type: "string", default: "—", description: "Value of the selected radio item" },
-  { name: "defaultValue", type: "string", default: "—", description: "Default selected value" },
-  { name: "onValueChange", type: "(value: string) => void", default: "—", description: "Change handler" },
+  { name: "value", type: "string", default: "-", description: "Value of the selected radio item" },
+  { name: "defaultValue", type: "string", default: "-", description: "Default selected value" },
+  { name: "onValueChange", type: "(value: string) => void", default: "-", description: "Change handler" },
   { name: "disabled", type: "boolean", default: "false", description: "Prevent interaction" },
 ];
 

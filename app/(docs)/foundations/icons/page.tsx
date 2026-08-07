@@ -46,7 +46,7 @@ export default function IconsPage() {
       <h2 id="guidelines" className="text-xl font-semibold mb-4">Guidelines</h2>
       <ul className="space-y-2 text-sm text-muted-foreground">
         <li>✓ Use lucide-react as the default icon library unless Radix-specific icons are needed</li>
-        <li>✓ Icons should always be decorative — provide text alternatives when necessary</li>
+        <li>✓ Icons should always be decorative - provide text alternatives when necessary</li>
         <li>✓ Standard icon size is 16px (size-4) for inline, 20px (size-5) for buttons</li>
         <li>✓ Use aria-hidden=&quot;true&quot; on decorative icons</li>
         <li>✓ Maintain consistent strokeWidth across icons within the same context</li>

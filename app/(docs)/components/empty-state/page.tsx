@@ -9,10 +9,10 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const props: PropDef[] = [
-  { name: "icon", type: "React.ElementType", default: "—", description: "Icon component to display" },
-  { name: "title", type: "string", default: "—", description: "Empty state heading" },
-  { name: "description", type: "string", default: "—", description: "Descriptive message" },
-  { name: "action", type: "React.ReactNode", default: "—", description: "Call-to-action button" },
+  { name: "icon", type: "React.ElementType", default: "-", description: "Icon component to display" },
+  { name: "title", type: "string", default: "-", description: "Empty state heading" },
+  { name: "description", type: "string", default: "-", description: "Descriptive message" },
+  { name: "action", type: "React.ReactNode", default: "-", description: "Call-to-action button" },
 ];
 
 function EmptyState({ icon: Icon, title, description, action }: { icon?: React.ElementType; title: string; description: string; action?: React.ReactNode }) {

@@ -107,7 +107,7 @@ const floatingComponents = [
 					<span className="size-2 rounded-full bg-emerald-500" />
 				</div>
 				<div className="mt-1.5 text-[10px] font-mono text-muted-foreground">
-					$ build — 12 components
+					$ build - 12 components
 				</div>
 			</div>
 		),
@@ -151,10 +151,9 @@ export function Hero() {
 				className="pointer-events-none absolute inset-0 z-10 opacity-[0.03] dark:opacity-[0.04]"
 				style={{
 					backgroundImage: `
-            linear-gradient(rgba(79,70,229,0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(79,70,229,0.3) 1px, transparent 1px)
-          `,
-					backgroundSize: "60px 60px",
+					linear-gradient(rgba(79,70,229,0.3) 1px, transparent 1px),
+					linear-gradient(90deg, rgba(79,70,229,0.3) 1px, transparent 1px)
+					backgroundSize: "60px 60px",`,
 				}}
 			/>
 
@@ -198,16 +197,24 @@ export function Hero() {
 					>
 						<div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border/50 bg-background/80 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur-sm shadow-sm">
 							<span className="size-1.5 rounded-full bg-accent animate-pulse" />
-							v0.1.0 — Beta release
+							v0.1.0 - Beta release
 						</div>
 						<h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl text-balance leading-[1.05]">
 							{headingWords.map((word, i) => (
 								<motion.span
 									key={word}
 									className="inline-block mr-[0.15em]"
-									initial={{ opacity: 0, y: 30, rotateX: -20 }}
+									initial={{
+										opacity: 0,
+										y: 30,
+										rotateX: -20,
+									}}
 									animate={{ opacity: 1, y: 0, rotateX: 0 }}
-									transition={{ duration: 0.5, delay: 0.5 + i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+									transition={{
+										duration: 0.5,
+										delay: 0.5 + i * 0.06,
+										ease: [0.16, 1, 0.3, 1],
+									}}
 								>
 									{word}
 								</motion.span>
@@ -216,9 +223,19 @@ export function Hero() {
 								<motion.span
 									key={word}
 									className="inline-block mr-[0.15em] bg-gradient-to-r from-indigo-600 to-rose-600 dark:from-indigo-400 dark:to-rose-400 bg-clip-text text-transparent"
-									initial={{ opacity: 0, y: 30, rotateX: -20 }}
+									initial={{
+										opacity: 0,
+										y: 30,
+										rotateX: -20,
+									}}
 									animate={{ opacity: 1, y: 0, rotateX: 0 }}
-									transition={{ duration: 0.5, delay: 0.5 + (headingWords.length + i) * 0.06, ease: [0.16, 1, 0.3, 1] }}
+									transition={{
+										duration: 0.5,
+										delay:
+											0.5 +
+											(headingWords.length + i) * 0.06,
+										ease: [0.16, 1, 0.3, 1],
+									}}
 								>
 									{word}
 								</motion.span>
@@ -227,14 +244,22 @@ export function Hero() {
 								className="inline-block"
 								initial={{ opacity: 0, y: 30, rotateX: -20 }}
 								animate={{ opacity: 1, y: 0, rotateX: 0 }}
-								transition={{ duration: 0.5, delay: 0.5 + (headingWords.length + gradientWords.length) * 0.06, ease: [0.16, 1, 0.3, 1] }}
+								transition={{
+									duration: 0.5,
+									delay:
+										0.5 +
+										(headingWords.length +
+											gradientWords.length) *
+											0.06,
+									ease: [0.16, 1, 0.3, 1],
+								}}
 							>
 								{suffixWord}
 							</motion.span>
 						</h1>
 						<p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-[65ch] leading-relaxed">
 							A centralized documentation hub for your design
-							system — featuring 14 production-ready UI
+							system - featuring 14 production-ready UI
 							components, comprehensive design tokens for colors,
 							typography, spacing, radius, and shadows, plus
 							WCAG-compliant accessibility guidance. All
@@ -311,14 +336,22 @@ export function Hero() {
 				className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ duration: 0.6, delay: 2.5, ease: [0.16, 1, 0.3, 1] }}
+				transition={{
+					duration: 0.6,
+					delay: 2.5,
+					ease: [0.16, 1, 0.3, 1],
+				}}
 			>
 				<span className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground/40">
 					Scroll
 				</span>
 				<motion.div
 					animate={{ y: [0, 6, 0] }}
-					transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+					transition={{
+						duration: 2,
+						repeat: Infinity,
+						ease: "easeInOut",
+					}}
 				>
 					<ChevronDown className="size-4 text-muted-foreground/30" />
 				</motion.div>

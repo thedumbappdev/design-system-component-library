@@ -28,7 +28,7 @@ export default function GettingStartedPage() {
         </div>
         <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="font-semibold text-sm mb-1">Composable</h3>
-          <p className="text-sm text-muted-foreground leading-relaxed">Components are designed to be combined. Use them as building blocks — not rigid templates.</p>
+          <p className="text-sm text-muted-foreground leading-relaxed">Components are designed to be combined. Use them as building blocks - not rigid templates.</p>
         </div>
         <div className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/20 hover:shadow-[0_0_30px_-12px_rgba(79,70,229,0.08)]">
           <h3 className="font-semibold text-sm mb-1">Themeable</h3>
